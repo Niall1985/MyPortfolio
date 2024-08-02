@@ -9,29 +9,35 @@
 body {
     background-image: url('1.png');
     background-size: cover;
+    margin: 0;
+    font-family: sans-serif;
 }
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 15px;
     overflow: hidden;
-    background-color: rgb(0, 0, 0,0);
+ 
 }
+
 li {
     float: left;
 }
+
 li a {
     color: aliceblue;
     text-decoration: none;
     padding: 12px 12px;
     text-align: center;
     display: block;
-    font-family: sans-serif;
-    font-size: 20px;
+    font-size: 1rem;
 }
+
 li a:hover {
-    color:grey;
+    color: grey;
 }
+
 .container {
     display: flex;
     align-items: center;
@@ -39,17 +45,21 @@ li a:hover {
     margin-top: 25px;
     margin-left: 15%;
     background-color: rgb(0, 0, 0);
-    height:590px;
+    height: 590px;
     width: 1000px;
     border-color: aliceblue;
     border-style: solid;
-
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); 
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
+
+
 img {
     height: 450px;
     width: 400px;
@@ -61,25 +71,101 @@ h1 {
     font-family: sans-serif;
     margin-left: 02%;
     margin-top: 1%;
-    height: 180px;
+    height: 230px;
 }
 
 h1 .blue {
     color: rgb(55, 138, 247);
 }
+
 .icon-container {
-    padding: 13px 13px;
+    display: inline-block;
+    margin-left: 5%
 }
-.icon-container i {
+
+.icon-container a {
     color: aliceblue;
     font-size: 50px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-top: 10%; 
-    margin-left: 70%;
+    text-decoration: none;
+  
+}
+
+.icon-container a:hover {
+    color: grey;
 }
 
 
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+        margin-left: 2.5%;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    img {
+        width: 80%;
+        max-width: 300px;
+        margin-left: 0;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .icon-container a {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    ul {
+        padding: 10px;
+    }
+
+    li {
+        float: none;
+        text-align: center;
+    }
+
+    li a {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .icon-container a {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .icon-container a {
+        font-size: 1rem;
+    }
+
+    img {
+        width: 100%;
+        max-width: 200px;
+    }
+}
 </style>
 </head>
 <body>
@@ -90,14 +176,12 @@ h1 .blue {
 </ul>
 <div class="container">
     <div>
-    <h1><div>Niall</div><div class="blue">Dcunha</div></h1>
-    <div><li class="icon-container"><a href="https://github.com/Niall1985"><i class="fa fa-github"></i></a></li></div>
-    <div><li class="icon-container"><a href="#linedIn"><i class="fa fa-linkedin"></i></a></div>
-    <div><li class="icon-container"><a href="#linedIn"><i class="fa fa-instagram"></i></a></div>
+        <h1><div>Niall</div><div class="blue">Dcunha</div></h1>
+        <div class="icon-container"><a href="https://github.com/Niall1985"><i class="fa fa-github"></i></a></div>
+        <div class="icon-container"><a href="#linkedin"><i class="fa fa-linkedin"></i></a></div>
+        <div class="icon-container"><a href="#instagram"><i class="fa fa-instagram"></i></a></div>
     </div>
     <img src="portforlio.jpg" alt="My Profile">
-   
-    
 </div>
 </body>
 </html>
