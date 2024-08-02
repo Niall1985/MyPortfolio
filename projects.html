@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body {
+    background-image: url('1.png');
+    background-size: cover;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 15px;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0,0);
+}
+li {
+    float: left;
+}
+li a {
+    color: aliceblue;
+    text-decoration: none;
+    padding: 12px 12px;
+    text-align: center;
+    display: block;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+li a:hover {
+    font-size: 20px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; 
+    justify-content: center;
+    margin-top: 0px;
+    margin-left: 0%;
+    background-color: rgb(0, 0, 0);
+    height: auto;
+    width: 100%;
+    border-color: aliceblue;
+    border-style: solid;
+    padding: 20px;
+    box-sizing: border-box; 
+}
+
+.project {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgb(59, 224, 249);
+    border-radius: 8px;
+    width: 30%;
+    height:300px;
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgb(216, 243, 244);
+    box-sizing: border-box;
+    min-width: 280px; 
+}
+.project img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+.project h2 {
+    font-size: 20px;
+    color: rgb(55, 138, 247);
+}
+.project p {
+    font-size: 14px;
+    color: rgb(22, 163, 185);
+}
+.project a {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(55, 138, 247);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+}
+.project a:hover {
+    background-color: rgb(30, 110, 200);
+}
+.icon-container {
+    padding: 13px 13px;
+}
+.icon-container i {
+    font-size: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 10%; 
+    /* margin-left: 70%; */
+}
+</style>
+</head>
+<body>
+<ul>
+    <li><a class="active" href="portfolio.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About Me</a></li>
+</ul>
+<div class="container">
+    <div class="project">
+        <div class="icon-container"><i class="fa fa-robot fa-lg" style="color: #0be4f4;"></i></div>
+        <h2>Lucy: Your Personal Virtual Assistant</h2>
+        <p>Lucy is a command line virtual assistant written using python.</p>
+        <a href="https://github.com/Niall1985/CLI_virtual_assistant" target="_blank">View on GitHub</a>
+    </div>
+    <!-- Project 2 -->
+    <div class="project">
+        <img src="icon2.png" alt="Icon 2">
+        <h2>Project Name 2</h2>
+        <p>Description of the project goes here. It provides a brief overview of what the project is about.</p>
+        <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project">
+        <img src="icon3.png" alt="Icon 3">
+        <h2>Project Name 3</h2>
+        <p>Description of the project goes here. It provides a brief overview of what the project is about.</p>
+        <a href="https://github.com/yourusername/project3" target="_blank">View on GitHub</a>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project">
+        <img src="icon4.png" alt="Icon 4">
+        <h2>Project Name 4</h2>
+        <p>Description of the project goes here. It provides a brief overview of what the project is about.</p>
+        <a href="https://github.com/yourusername/project4" target="_blank">View on GitHub</a>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="project">
+        <img src="icon5.png" alt="Icon 5">
+        <h2>Project Name 5</h2>
+        <p>Description of the project goes here. It provides a brief overview of what the project is about.</p>
+        <a href="https://github.com/yourusername/project5" target="_blank">View on GitHub</a>
+    </div>
+
+    <!-- Project 6 -->
+    <div class="project">
+        <img src="icon6.png" alt="Icon 6">
+        <h2>Project Name 6</h2>
+        <p>Description of the project goes here. It provides a brief overview of what the project is about.</p>
+        <a href="https://github.com/yourusername/project6" target="_blank">View on GitHub</a>
+    </div>
+</div>
+</body>
+</html>
