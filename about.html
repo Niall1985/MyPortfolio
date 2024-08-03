@@ -13,38 +13,46 @@ body {
     font-family: sans-serif;
 }
 
+
+
 ul {
     list-style-type: none;
     margin: 0;
-    padding: 15px;
+    padding: 5px; 
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 li {
-    float: left;
+    margin: 0;
+}
+
+li img {
+    height: 70px; 
+    width: auto; 
+    margin-left: 2%;
 }
 
 li a {
     color: aliceblue;
     text-decoration: none;
-    padding: 12px 15px;
+    padding: 1px 1px;
     text-align: center;
-    display: block;
-    font-size: 1.2rem;
+    font-size: 20px;
 }
 
 li a:hover {
-    color: grey;
+    color: rgb(68, 65, 65);
 }
-
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 20px auto;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0);
     height: auto;
     max-width: 1200px;
     border-color: aliceblue;
@@ -61,13 +69,13 @@ li a:hover {
 
 h2 {
     color: rgb(255, 255, 255);
-    font-size: 2.5rem;
+    font-size: 50px;
     margin: 20px 0;
 }
 
 p {
     color: rgb(17, 199, 202);
-    font-size: 1rem;
+    font-size: 18px;
     text-align: center;
     margin-bottom: 30px;
     max-width: 800px;
@@ -103,7 +111,7 @@ p {
 .marathi { background-color: blue; }
 .german { background-color: rgb(90, 63, 122); }
 
-/* Media Queries */
+
 @media (max-width: 768px) {
     ul {
         padding: 10px;
@@ -162,6 +170,7 @@ p {
 </head>
 <body>
 <ul>
+    <li><img src="ss.png" alt="logo"></li>
     <li><a class="active" href="portfolio.html">Home</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="about.html">About Me</a></li>
