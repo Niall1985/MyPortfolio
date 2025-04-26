@@ -1,515 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Niall-Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <style>
-
-        html{
-            scroll-behavior: smooth;
-        }
-        body {
-            background-color: rgb(37, 37, 37);
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: rgb(37, 37, 37);
-}
-
-.nav-links, .nav-links1 {
-    display: flex;
-    gap: 20px;
-}
-
-        .logo img {
-            height: 40px;
-            width: 170px;
-            display: flex;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            padding: 8px 16px;
-            margin-left: 10px;
-            justify-content: flex-end;
-        }
-
-        .nav-links a:hover {
-            background-color: rgb(80, 80, 80);
-            border-radius: 4px;
-        }
-        
-        .heading {
-            text-align: left;
-            margin-top: 100px;
-            margin-left: 50px;
-        }
-
-        .heading h3 {
-            font-size: 40px;
-            margin: 5px 0;
-            margin-top: 5px;
-            color: rgb(255, 255, 255);
-        }
-        
-        .heading h4{
-            font-size: 20px;
-            margin-top: 15px;
-        }
-        .heading h1 {
-            color: rgb(245, 174, 47);
-            font-family: monospace;
-            font-size: 80px;
-            overflow: hidden;
-            border-right: .15em solid orange; 
-            white-space: nowrap; 
-            margin: 0; 
-            letter-spacing: .10em; 
-            text-align: left;
-            animation: 
-                typing 3.5s steps(30, end) forwards,
-                blink-caret .5s step-end 1s;
-            }
-
-        @keyframes typing {
-          from { width: 0ch }
-          to { width: 14ch }
-        }
-
-        @keyframes blink-caret {
-          from, to { border-color: transparent }
-          50% { border-color: orange }
-        }
-
-        hr{
-            background-color: rgb(245, 174, 47);
-            margin-top: 70px;
-        }
-        .about {
-            margin: 0 auto;
-            padding: 20px;
-            max-width: 1000px; 
-            line-height: 1.6;
-        }
-        .about h1{
-            text-align: center;
-            font-size: 40px;
-        }
-
-        .about p {
-            line-height: 1.6; 
-            margin-bottom: 20px; 
-            font-size: 20px;
-        }
-
-        .skills h1 {
-            text-align: center;
-            font-size: 40px;
-        }
-
-        .skills-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .icon-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: rgb(50, 50, 50);
-            border-radius: 10px;
-            padding: 20px;
-            width: 150px;
-            height: 200px;
-            text-align: center;
-        }
-
-        .icon-container:hover{
-            background-color: rgb(245, 174, 47);
-        }
-
-        .icon-container img {
-            height: 100px;
-            width: 100px;
-            margin-bottom: 10px; 
-        }
-        .icon-container i {
-           font-size: 90px;
-           margin-left: 2px;
-            margin-bottom: 10px; 
-        }
-
-        .icon-container p {
-            margin: 0;
-            color: white;
-            font-size: 16px;
-        }
-
-        .skills-container, .projects {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.project {
-    background-color: rgba(50, 50, 50);
-    border-radius: 8px;
-    flex: 1 1 calc(33% - 20px); 
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-}
-.projects h1 {
-    text-align: center;
-    font-size: 40px;
-}
-
-.project i {
-    font-size: 60px;
-    margin-bottom: 10px;
-    color: rgb(59, 224, 249);
-}
-
-.project h2 {
-    font-size: 20px;
-    color: rgb(250, 250, 250);
-    margin-bottom: 15px;
-}
-
-.project p {
-    font-size: 14px;
-    color: rgb(255, 255, 255);
-    margin-bottom: 15px;
-}
-
-.project a {
-    text-decoration: none;
-    color: white;
-    background-color: rgb(55, 138, 247);
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    display: inline-block;
-}
-
-.project:hover{
-    background-color: rgb(245, 174, 47);
-    color:rgb(37, 37, 37)
-}
-
-.project:hover p{
-    background-color: rgb(245, 174, 47);
-    color:rgb(37, 37, 37)
-}
-
-.project:hover h2{
-    background-color: rgb(245, 174, 47);
-    color:rgb(37, 37, 37)
-}
-
-.project:hover .fa-solid {
-    color: rgb(54, 69, 79);
-}
-
-.nav-links1 i{
-    font-size: 40px;
-}
-        .nav-links1 a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            padding: 8px 16px;
-            margin-left: 10px;
-            justify-content: flex-end;
-        }
-
-
-        @media (max-width: 768px) {
-    .nav-links {
-        flex-direction: row;
-        align-items: center;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Niall-Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary-color: #f5ae2f;
+      --background-dark: #1e1e1e;
+      --card-bg: #2a2a2a;
+      --text-light: #ffffff;
+      --accent-color: #0be4f4;
+      --hover-color: #f5ae2f;
+      --transition-speed: 0.3s;
+      --shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+        background: radial-gradient(circle at 25% 25%, #2a2a2a 0%, #1e1e1e 100%);
+        background-size: cover;
+        color: var(--text-light);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: var(--background-dark);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+    .nav-links,
     .nav-links1 {
-        justify-content: center;
-        align-items: center;
+      display: flex;
+      gap: 20px;
+      align-items: center;
     }
-
+    .nav-links a,
+    .nav-links1 a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 18px;
+      position: relative;
+      transition: color var(--transition-speed);
+    }
+    .nav-links a:hover::after,
+    .nav-links1 a:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--primary-color);
+    }
     .heading {
-        text-align: center;
-        margin: 50px auto;
+      text-align: center;
+      margin: 100px auto 50px;
+      max-width: 90%;
     }
-
     .heading h1 {
-        font-size: 40px; 
-        margin-left: 35px;
+      color: var(--primary-color);
+      font-size: 72px;
+      font-family: monospace;
+      animation: typing 3.5s steps(30, end) forwards, blink-caret 0.5s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 0.15em solid var(--primary-color);
+      letter-spacing: 0.1em;
     }
-
     .heading h3 {
-        font-size: 24px; 
-        margin-left: 10px;
+      font-size: 28px;
+      margin-top: 20px;
     }
-
     .heading h4 {
-        font-size: 18px; 
-        margin-left: 5px;
+      font-size: 20px;
+      margin-top: 10px;
     }
-    .logo img{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
     }
-
-    .about, .skills, .projects {
-        padding: 20px;
-        text-align: center;
-        max-width: 90%;
-        margin: 0 auto;
+    @keyframes blink-caret {
+      0%, 100% { border-color: transparent }
+      50% { border-color: var(--primary-color); }
     }
-
-    .skills-container, .projects {
-        display: flex;
+    hr {
+      border: none;
+      height: 2px;
+      background: var(--primary-color);
+      margin: 60px auto;
+      width: 80%;
+    }
+    .about,
+    .skills,
+    .projects {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .about p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .skills-container,
+    .projects .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .icon-container,
+    .project {
+      background-color: var(--card-bg);
+      border-radius: 15px;
+      padding: 25px;
+      width: 220px;
+      transition: transform var(--transition-speed), background-color var(--transition-speed);
+      box-shadow: var(--shadow);
+    }
+    .icon-container:hover,
+    .project:hover {
+      background-color: var(--hover-color);
+      color: #000;
+      transform: translateY(-5px);
+    }
+    .icon-container img,
+    .icon-container i {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+    }
+    .icon-container i {
+      font-size: 70px;
+    }
+    .icon-container p,
+    .project p {
+      font-size: 16px;
+      margin: 0;
+    }
+    .project i {
+      font-size: 60px;
+      margin-bottom: 15px;
+      color: var(--accent-color);
+    }
+    .project h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+    .project a {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: var(--accent-color);
+      color: #000;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: background-color var(--transition-speed);
+    }
+    .project a:hover {
+      background-color: var(--text-light);
+      color: #000;
+    }
+    @media (max-width: 768px) {
+      .heading h1 {
+        font-size: 42px;
+      }
+      .heading h3 {
+        font-size: 22px;
+      }
+      .heading h4 {
+        font-size: 18px;
+      }
+      .skills-container,
+      .projects .skills-container {
         flex-direction: column;
         align-items: center;
+      }
+      .icon-container,
+      .project {
+        width: 90%;
+      }
+      .nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .nav-links,
+      .nav-links1 {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
     }
-
-    .project, .icon-container {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-
-    .project h2 {
-        font-size: 18px; 
-    }
-
-    .icon-container i {
-        font-size: 50px; 
-    }
-
-    .nav-links a {
-        margin: 10px 0;
-    }
-
-    .nav-links1 a {
-        margin: 10px;
-    }
-
-    .nav-links1 i{
-        font-size: 20px;
-    }
-   
-}
-
-hr{
-    width: 100%;
-}
-
- </style>
+  </style>
 </head>
 <body>
-
-<div class="nav">
-    <div class="logo">
-        <img src="img/ss_main.png" alt="Logo">
-    </div>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-    </div>
-    <div class="nav-links1">
-        <a href="https://github.com/Niall1985"><i class="fa-brands fa-github" style="color: #f5ae2f;"></i></a>
-        <a href="https://www.linkedin.com/in/niall-dcunha"><i class="fa-brands fa-linkedin" style="color: #f5ae2f;"></i></a>
-        <a href="mailto:venugopalcoldcoffee@gmail.com"><i class="fa-solid fa-envelope" style="color: #f5ae2f;"></i></a>
-        <a href="https://x.com/NiallD1985"><i class="fa-brands fa-twitter" style="color: #feae2f;"></i></a>
-    </div>
-</div>
-
-<div class="heading">
-  <h1>Niall Dcunha</h1>
-  <h3>Sophomore B.tech Student</h3>
-  <h4>Backend Developer | Entry-Level Machine Learning Engineer</h4>
-</div>
-<hr>
-<div class="about" id = "about">
-    <h1>About</h1>
-    <p>
-        As a student pursuing a degree in Computer Science and Engineering, I have developed a reasonable proficiency in several programming languages including Python, Go, C, C++, java, JavaScript, HTML and CSS. My expertise extends to libraries and frameworks such as Pandas, NumPy, Flask, Matplotlib, and PyMuPDF. Additionally, I am actively exploring prompt engineering and Machine learning.
-    </p>
-    <p>
-        My interests include AI and ML, data science, and web development. I am also passionate about music and cricket. I am proficient in English and have a decent grasp of Hindi and Marathi. Currently, I am learning German to expand my linguistic capabilities.
-    </p>
-</div>
-<hr>
-
-<div class="skills" id = "skills">
-    <h1>Skills</h1>
-    <div class="skills-container">
-        <div class="icon-container">
-            <img src="img/python_icon.png" alt="Python Icon">
-            <p>Python</p>
+    <div class="nav">
+        <div class="logo">
+            <img src="img/ss_main.png" alt="Logo">
         </div>
-        <div class="icon-container">
-            <img src="img/c_icon.png" alt="C Icon">
-            <p>C</p>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
         </div>
-        <div class="icon-container">
-            <img src="img/cpp_icon.png" alt="C++ Icon">
-            <p>C++</p>
-        </div>
-        <div class="icon-container">
-            <img src="img/html_icon.png" alt="HTML Icon">
-            <p>HTML</p>
-        </div>
-        <div class="icon-container">
-            <img src="img/css_icon.png" alt="CSS Icon">
-            <p>CSS</p>
-        </div>
-        <div class="icon-container">
-            <img src="img/Js_icon.png" alt="JS Icon">
-            <p>JavaScript</p>
-        </div>
-        <div class="icon-container">
-            <img src="img/java_icon.png" alt="Java Icon">
-            <p>Java</p>
-        </div>
-        <div class="icon-container">
-            <img src="img/flask_icon.png" alt="Flask Icon">
-            <p>Flask</p>
-        </div>
-        <div class="icon-container">
-            <img src="img/pandas_icon.png" alt="Pandas Icon">
-            <p>Pandas</p>
-        </div>
-        <div class="icon-container">
-            <img src="img/nlp_icon.png" alt="NLP Icon">
-            <p>NLP</p>
-        </div>
-        <div class="icon-container">
-            <img src="img/web_icon.png" alt="WEB Icon">
-            <p>UI Design</p>
-        </div>
-        <div class="icon-container">
-            <img src="img/audio_icon.png" alt="Audio Icon">
-            <p>Audio Editing</p>
-        </div>
-        <div class="icon-container">
-            <i class="fa-brands fa-golang" style="color: #74C0FC"></i>
-            <p>Go</p>
-        </div>
-        <div class="icon-container">
-            <img src="img/excel_icon.png" alt="Excel Icon">
-            <p>Excel</p>
+        <div class="nav-links1">
+            <a href="https://github.com/Niall1985"><i class="fa-brands fa-github" style="color: #f5ae2f;"></i></a>
+            <a href="https://www.linkedin.com/in/niall-dcunha"><i class="fa-brands fa-linkedin" style="color: #f5ae2f;"></i></a>
+            <a href="mailto:venugopalcoldcoffee@gmail.com"><i class="fa-solid fa-envelope" style="color: #f5ae2f;"></i></a>
+            <a href="https://x.com/NiallD1985"><i class="fa-brands fa-twitter" style="color: #feae2f;"></i></a>
         </div>
     </div>
-</div>
-<hr>
-<div class="projects" id = "projects">
-    <h1>Projects</h1>
-    <div class="skills-container">
-        <div class="project">
-            <i class="fa fa-microphone" style="color: #0be4f4;"></i>
-            <h2>Lucy: Your Personal Virtual Assistant</h2>
-            <p>Lucy is a Python-based virtual assistant designed to help you with various tasks using speech recognition, text-to-speech, and natural language processing.</p>
-            <a href="https://github.com/Niall1985/CLI_virtual_assistant" target="_blank">View on GitHub</a>
-        </div>
-
-        <div class="project">
-            <i class="fa-solid fa-file" style="color: #0be4f4;"></i>
-            <h2>Documentor</h2>
-            <p>An application allows users to upload PDF files, enter queries, and retrieve relevant content from the uploaded PDFs. The application uses the Sentence Transformer and SciKit-learn libraries to search for and extract content from the PDFs relevant to the query.</p>
-            <a href="https://github.com/Niall1985/DocuMentor" target="_blank">View on GitHub</a>
-        </div>
-
-        <div class="project">
-            <i class="fa-solid fa-file" style="color: #0be4f4;"></i>
-            <h2>File Server</h2>
-            <p>This project is a simple file server implemented in Go that allows users to upload, download, list, and delete files. The server saves uploaded files in an uploads directory and provides endpoints to manage the files.</p>
-            <a href="https://github.com/Niall1985/FileServerGolang" target="_blank">View on GitHub</a>
-        </div>
-
-        <div class="project">
-            <i class="fa-solid fa-robot" style="color: #0be4f4;"></i>
-            <h2>Disease Information Bot</h2>
-            <p>A simple bot that returns relevant disease information based on user input by extracting data from a database and using Gemini to generate additional details.</p>
-            <a href="https://github.com/Niall1985/Disease_Info_Bot" target="_blank">View on GitHub</a>
-        </div>
-
-        <div class="project">
-            <i class="fa-solid fa-face-smile" style="color: #0be4f4;"></i>
-            <h2>SentiToolKit</h2>
-            <p>SentiToolKit is a simple sentiment analysis library that leverages LSTM (Long Short-Term Memory) neural networks for predicting the sentiment of a given text. This toolkit provides a streamlined interface for text preprocessing, model loading, and prediction.</p>
-            <a href="https://github.com/Niall1985/SentiToolKit" target="_blank">View on GitHub</a>
-        </div>
-
-        <div class="project">
-            <i class="fa-solid fa-file-lines" style="color: #0be4f4;"></i>
-            <h2>Text Summarizer</h2>
-            <p>A Python script that performs text summarization using a frequency-based approach.</p>
-            <a href="https://github.com/Niall1985/Text_summarizer" target="_blank">View on GitHub</a>
-        </div>
-
-        <div class="project">
-            <i class="fa-solid fa-mobile" style="color: #0be4f4;"></i>
-            <h2>AgroConnect</h2>
-            <p>An app that provides direct-to-consumer services such as buying and selling crops, cutting out the middleman, and more.</p>
-            <a href="https://github.com/celestix/agroconnect" target="_blank">View on GitHub</a>
-        </div>
-
-        <div class="project">
-            <i class="fa-solid fa-link" style="color: #0be4f4;"></i>
-            <h2>NanoLinks</h2>
-            <p>NanoLinks is a simple URL shortener built with Python and Flask. It allows users to shorten long URLs and provides a shortened URL that redirects to the original link.</p>
-            <a href="https://github.com/Niall1985/NanoLinks" target="_blank">View on GitHub</a>
-        </div>
-
-        <div class="project">
-            <i class="fa-solid fa-file-pdf" style="color: #0be4f4;"></i>
-            <h2>PDF-Password Decrypter</h2>
-            <p>This Python script is designed to decrypt passwords for PDF files using a brute-force approach, generating potential passwords to unlock files.</p>
-            <a href="https://github.com/Niall1985/PasswordDecrypter" target="_blank">View on GitHub</a>
-        </div>
-
-        <div class="project">
-            <i class="fa-solid fa-c" style="color: #0be4f4;"></i>
-            <h2>C Programming</h2>
-            <p>Consists of Multiple programs ranging from Usage of various methods of C to DSA and Process Scheduling</p>
-            <a href="https://github.com/Niall1985/C_Programming" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project">
-            <i class="fa-solid fa-file-pdf" style="color: #0be4f4;"></i>
-            <h2>ChatPDF-Local</h2>
-            <p>A locally running chatbot that lets you chat with your PDFs! </p>
-            <a href="https://github.com/Niall1985/ChatPDF-Local" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project">
-            <i class="fa-solid fa-blog" style="color: #0be4f4;"></i>
-            <h2>BlogStop</h2>
-            <p>BlogStop is a minimal and user-friendly blogging platform built with Streamlit and Google Gemini AI. Users can create, view, and manage their blog posts with AI-assisted content generation.</p>
-            <a href="https://github.com/Niall1985/BlogStop" target="_blank">View on GitHub</a>
+    
+    <div class="heading">
+      <h1>Niall Dcunha</h1>
+      <h3>Sophomore B.tech Student</h3>
+      <h4>Backend Developer | Entry-Level Machine Learning Engineer</h4>
+    </div>
+    <hr>
+    <div class="about" id = "about">
+        <h1>About</h1>
+        <p>
+            As a student pursuing a degree in Computer Science and Engineering, I have developed a reasonable proficiency in several programming languages including Python, Go, C, C++, java, JavaScript, HTML and CSS. My expertise extends to libraries and frameworks such as Pandas, NumPy, Flask, Matplotlib, and PyMuPDF. Additionally, I am actively exploring prompt engineering and Machine learning.
+        </p>
+        <p>
+            My interests include AI and ML, data science, and web development. I am also passionate about music and cricket. I am proficient in English and have a decent grasp of Hindi and Marathi. Currently, I am learning German to expand my linguistic capabilities.
+        </p>
+    </div>
+    <hr>
+    
+    <div class="skills" id = "skills">
+        <h1>Skills</h1>
+        <div class="skills-container">
+            <div class="icon-container">
+                <img src="img/python_icon.png" alt="Python Icon">
+                <p>Python</p>
+            </div>
+            <div class="icon-container">
+                <img src="img/c_icon.png" alt="C Icon">
+                <p>C</p>
+            </div>
+            <div class="icon-container">
+                <img src="img/cpp_icon.png" alt="C++ Icon">
+                <p>C++</p>
+            </div>
+            <div class="icon-container">
+                <img src="img/html_icon.png" alt="HTML Icon">
+                <p>HTML</p>
+            </div>
+            <div class="icon-container">
+                <img src="img/css_icon.png" alt="CSS Icon">
+                <p>CSS</p>
+            </div>
+            <div class="icon-container">
+                <img src="img/Js_icon.png" alt="JS Icon">
+                <p>JavaScript</p>
+            </div>
+            <div class="icon-container">
+                <img src="img/java_icon.png" alt="Java Icon">
+                <p>Java</p>
+            </div>
+            <div class="icon-container">
+                <img src="img/flask_icon.png" alt="Flask Icon">
+                <p>Flask</p>
+            </div>
+            <div class="icon-container">
+                <img src="img/pandas_icon.png" alt="Pandas Icon">
+                <p>Pandas</p>
+            </div>
+            <div class="icon-container">
+                <img src="img/nlp_icon.png" alt="NLP Icon">
+                <p>NLP</p>
+            </div>
+            <div class="icon-container">
+                <img src="img/web_icon.png" alt="WEB Icon">
+                <p>UI Design</p>
+            </div>
+            <div class="icon-container">
+                <img src="img/audio_icon.png" alt="Audio Icon">
+                <p>Audio Editing</p>
+            </div>
+            <div class="icon-container">
+                <i class="fa-brands fa-golang" style="color: #74C0FC"></i>
+                <p>Go</p>
+            </div>
+            <div class="icon-container">
+                <img src="img/excel_icon.png" alt="Excel Icon">
+                <p>Excel</p>
+            </div>
         </div>
     </div>
-</div>
-
+    <hr>
+    <div class="projects" id = "projects">
+        <h1>Projects</h1>
+        <div class="skills-container">
+            <div class="project">
+                <i class="fa fa-microphone" style="color: #0be4f4;"></i>
+                <h2>Lucy: Your Personal Virtual Assistant</h2>
+                <p>Lucy is a Python-based virtual assistant designed to help you with various tasks using speech recognition, text-to-speech, and natural language processing.</p>
+                <a href="https://github.com/Niall1985/CLI_virtual_assistant" target="_blank">View on GitHub</a>
+            </div>
+    
+            <div class="project">
+                <i class="fa-solid fa-file" style="color: #0be4f4;"></i>
+                <h2>Documentor</h2>
+                <p>An application allows users to upload PDF files, enter queries, and retrieve relevant content from the uploaded PDFs. The application uses the Sentence Transformer and SciKit-learn libraries to search for and extract content from the PDFs relevant to the query.</p>
+                <a href="https://github.com/Niall1985/DocuMentor" target="_blank">View on GitHub</a>
+            </div>
+    
+            <div class="project">
+                <i class="fa-solid fa-file" style="color: #0be4f4;"></i>
+                <h2>File Server</h2>
+                <p>This project is a simple file server implemented in Go that allows users to upload, download, list, and delete files. The server saves uploaded files in an uploads directory and provides endpoints to manage the files.</p>
+                <a href="https://github.com/Niall1985/FileServerGolang" target="_blank">View on GitHub</a>
+            </div>
+    
+            <div class="project">
+                <i class="fa-solid fa-robot" style="color: #0be4f4;"></i>
+                <h2>Disease Information Bot</h2>
+                <p>A simple bot that returns relevant disease information based on user input by extracting data from a database and using Gemini to generate additional details.</p>
+                <a href="https://github.com/Niall1985/Disease_Info_Bot" target="_blank">View on GitHub</a>
+            </div>
+    
+            <div class="project">
+                <i class="fa-solid fa-face-smile" style="color: #0be4f4;"></i>
+                <h2>SentiToolKit</h2>
+                <p>SentiToolKit is a simple sentiment analysis library that leverages LSTM (Long Short-Term Memory) neural networks for predicting the sentiment of a given text. This toolkit provides a streamlined interface for text preprocessing, model loading, and prediction.</p>
+                <a href="https://github.com/Niall1985/SentiToolKit" target="_blank">View on GitHub</a>
+            </div>
+    
+            <div class="project">
+                <i class="fa-solid fa-file-lines" style="color: #0be4f4;"></i>
+                <h2>Text Summarizer</h2>
+                <p>A Python script that performs text summarization using a frequency-based approach.</p>
+                <a href="https://github.com/Niall1985/Text_summarizer" target="_blank">View on GitHub</a>
+            </div>
+    
+            <div class="project">
+                <i class="fa-solid fa-mobile" style="color: #0be4f4;"></i>
+                <h2>AgroConnect</h2>
+                <p>An app that provides direct-to-consumer services such as buying and selling crops, cutting out the middleman, and more.</p>
+                <a href="https://github.com/celestix/agroconnect" target="_blank">View on GitHub</a>
+            </div>
+    
+            <div class="project">
+                <i class="fa-solid fa-link" style="color: #0be4f4;"></i>
+                <h2>NanoLinks</h2>
+                <p>NanoLinks is a simple URL shortener built with Python and Flask. It allows users to shorten long URLs and provides a shortened URL that redirects to the original link.</p>
+                <a href="https://github.com/Niall1985/NanoLinks" target="_blank">View on GitHub</a>
+            </div>
+    
+            <div class="project">
+                <i class="fa-solid fa-file-pdf" style="color: #0be4f4;"></i>
+                <h2>PDF-Password Decrypter</h2>
+                <p>This Python script is designed to decrypt passwords for PDF files using a brute-force approach, generating potential passwords to unlock files.</p>
+                <a href="https://github.com/Niall1985/PasswordDecrypter" target="_blank">View on GitHub</a>
+            </div>
+    
+            <div class="project">
+                <i class="fa-solid fa-c" style="color: #0be4f4;"></i>
+                <h2>C Programming</h2>
+                <p>Consists of Multiple programs ranging from Usage of various methods of C to DSA and Process Scheduling</p>
+                <a href="https://github.com/Niall1985/C_Programming" target="_blank">View on GitHub</a>
+            </div>
+            <div class="project">
+                <i class="fa-solid fa-file-pdf" style="color: #0be4f4;"></i>
+                <h2>ChatPDF-Local</h2>
+                <p>A locally running chatbot that lets you chat with your PDFs! </p>
+                <a href="https://github.com/Niall1985/ChatPDF-Local" target="_blank">View on GitHub</a>
+            </div>
+            <div class="project">
+                <i class="fa-solid fa-blog" style="color: #0be4f4;"></i>
+                <h2>BlogStop</h2>
+                <p>BlogStop is a minimal and user-friendly blogging platform built with Streamlit and Google Gemini AI. Users can create, view, and manage their blog posts with AI-assisted content generation.</p>
+                <a href="https://github.com/Niall1985/BlogStop" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
