@@ -404,474 +404,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Niall D'cunha — AI Agent Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQZ3Zx1YI6YA5mL2xF8GzGZ0eKCbFf8HnV9Z7Vj3E5QZ8b9b5Xz0hXH/Z6+7Yb7w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
   <style>
-    :root{
-      --bg: #0b0d10;
-      --bg-elev: #0f1217;
-      --card: #12161d;
-      --muted: #94a3b8;
-      --text: #e5e7eb;
-      --primary: #22d3ee; /* cyan */
-      --accent: #f59e0b;  /* amber */
-      --success:#34d399;
-      --ring: rgba(34,211,238,.35);
-      --shadow: 0 8px 30px rgba(0,0,0,.45);
-      --radius: 18px;
-      --glass: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
     }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: radial-gradient(1200px 800px at 20% -10%, rgba(34,211,238,.10), transparent 60%),
-                  radial-gradient(900px 600px at 100% 0%, rgba(245,158,11,.12), transparent 50%),
-                  var(--bg);
-      color:var(--text);
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
     }
-
-    /* ---------- Nav ---------- */
-    .nav{position:sticky;top:0;z-index:50;background:rgba(10,12,15,.6);backdrop-filter: blur(10px);border-bottom:1px solid rgba(148,163,184,.1)}
-    .nav-inner{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
-    .logo{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--glass);border:1px solid rgba(148,163,184,.15);box-shadow:var(--shadow)}
-    .logo svg{width:20px;height:20px}
-    .brand span{font-weight:700;letter-spacing:.3px}
-    .links{display:flex;gap:18px;align-items:center}
-    .links a{color:var(--muted);text-decoration:none;font-weight:500}
-    .links a:hover{color:var(--text)}
-    .icon-btn{width:38px;height:38px;border-radius:12px;border:1px solid rgba(148,163,184,.18);background:var(--glass);display:grid;place-items:center;cursor:pointer}
-    .hamburger{display:none}
-
-    /* ---------- Hero ---------- */
-    .hero{max-width:1100px;margin:40px auto 10px; padding: 24px 20px 0}
-    .badge{display:inline-flex;gap:8px;align-items:center;font-size:12px;color:var(--muted);padding:6px 10px;border:1px solid rgba(148,163,184,.2);border-radius:999px;background:var(--glass)}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;margin-top:18px}
-    .card{background: var(--card); background-image: var(--glass); border:1px solid rgba(148,163,184,.15);border-radius:var(--radius); box-shadow: var(--shadow)}
-    .card.pad{padding:22px}
-    .title{font-size:clamp(28px, 4.1vw, 52px);line-height:1.05;margin:4px 0 10px}
-    .subtitle{font-size:clamp(14px, 1.6vw, 18px);color:var(--muted);max-width:64ch}
-
-    .cta-row{display:flex;flex-wrap:wrap; gap:12px; margin-top:18px}
-    .btn{padding:12px 16px;border-radius:14px;border:1px solid rgba(148,163,184,.2);background:var(--glass);color:var(--text);text-decoration:none;display:inline-flex;gap:10px;align-items:center;font-weight:600}
-    .btn.primary{background:linear-gradient(135deg, rgba(34,211,238,.15), rgba(34,211,238,.05));border-color:var(--ring)}
-    .btn:hover{transform:translateY(-1px)}
-
-    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
-    .metric{padding:14px;border-radius:14px;border:1px solid rgba(148,163,184,.15);background:var(--glass)}
-    .metric .v{font-size:22px;font-weight:800}
-    .metric .k{font-size:12px;color:var(--muted)}
-
-    .stack{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    .stack-item{padding:16px;border-radius:14px;border:1px solid rgba(148,163,184,.15);background:var(--glass);display:flex;gap:14px}
-    .stack-item i{font-size:18px;color:var(--primary)}
-
-    /* ---------- Section ---------- */
-    .section{max-width:1100px;margin:60px auto 10px;padding:0 20px}
-    .section h2{font-size:clamp(22px, 2.6vw, 30px);margin:0 0 16px}
-    .section .hint{color:var(--muted);font-size:14px;margin-top:-6px}
-
-    /* ---------- Skills ---------- */
-    .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .skill{padding:16px;border-radius:14px;border:1px solid rgba(148,163,184,.15);background:var(--glass)}
-    .skill h3{margin:0 0 10px;font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
-    .chip-row{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{padding:8px 10px;border-radius:999px;background:rgba(148,163,184,.08);border:1px solid rgba(148,163,184,.2);font-size:13px}
-
-    /* ---------- Projects ---------- */
-    .toolbar{display:flex;gap:10px;align-items:center;margin-bottom:14px}
-    .search{flex:1;display:flex;gap:8px;align-items:center;background:var(--glass);border:1px solid rgba(148,163,184,.18);border-radius:12px;padding:10px 12px}
-    .search input{flex:1;background:transparent;border:none;outline:none;color:var(--text)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .project{position:relative;overflow:hidden;border-radius:16px;border:1px solid rgba(148,163,184,.15);background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));transition:transform .25s ease}
-    .project:hover{transform:translateY(-3px)}
-    .project .tagbar{position:absolute;top:10px;left:10px;display:flex;gap:6px;flex-wrap:wrap}
-    .tag{font-size:11px;padding:6px 8px;border-radius:999px;background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.35)}
-    .project .body{padding:16px}
-    .project h3{margin:4px 0 8px;font-size:18px}
-    .project p{margin:0;color:var(--muted);font-size:14px}
-    .project .actions{display:flex;gap:8px;margin-top:14px}
-    .pill{font-size:13px;padding:8px 10px;border-radius:10px;border:1px solid rgba(148,163,184,.2);text-decoration:none;color:var(--text);display:inline-flex;gap:8px;align-items:center}
-    .pill.primary{border-color:var(--ring);background:rgba(34,211,238,.08)}
-
-    /* ---------- Experience / Impact ---------- */
-    .timeline{display:grid;grid-template-columns:6px 1fr;gap:16px}
-    .rail{background:rgba(148,163,184,.18);border-radius:999px}
-    .t-card{position:relative;padding:14px;border-radius:14px;border:1px solid rgba(148,163,184,.15);background:var(--glass)}
-    .dot{position:absolute;left:-24px;top:18px;width:14px;height:14px;border-radius:999px;background:var(--primary);box-shadow:0 0 0 4px rgba(34,211,238,.15)}
-
-    /* ---------- Footer ---------- */
-    footer{max-width:1100px;margin:60px auto 40px;padding:0 20px;color:var(--muted)}
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns:1fr}
-      .metrics{grid-template-columns:repeat(2,1fr)}
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .skills{grid-template-columns:repeat(2,1fr)}
-      .stack{grid-template-columns:1fr}
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #58a6ff; /* light blue accent */
     }
-    @media (max-width: 640px){
-      .links{display:none}
-      .hamburger{display:grid}
-      .grid{grid-template-columns:1fr}
-      .metrics{grid-template-columns:repeat(2,1fr)}
+    header p {
+      font-size: 1.2rem;
+      color: #8b949e;
     }
-
-    /* Utility */
-    .sr{position:absolute;left:-9999px}
+    .socials a {
+      margin: 0 0.5rem;
+      color: #58a6ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .metrics, .skills, .agent-stack, .projects {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .metrics-grid, .skills-grid, .agent-grid, .projects-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .metrics-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .agent-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #58a6ff;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(88, 166, 255, 0.1);
+      color: #58a6ff;
+      padding: 0.2rem 0.6rem;
+      margin: 0.2rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+    }
+    .projects-grid .card p {
+      color: #c9d1d9;
+    }
+    .projects-grid .card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: #58a6ff;
+      color: #0d1117;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <nav class="nav" aria-label="Primary">
-    <div class="nav-inner">
-      <a class="brand" href="#top">
-        <div class="logo" aria-hidden="true">
-          <!-- Minimal AI glyph -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 3v4M12 17v4M3 12h4M17 12h4"/>
-            <circle cx="12" cy="12" r="5"/>
-          </svg>
-        </div>
-        <span>Niall — AI Agent Dev</span>
-      </a>
-      <div class="links" role="navigation">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#stack">Agent Stack</a>
-        <a href="#impact">Impact</a>
-        <a href="#contact">Contact</a>
-        <a class="icon-btn" href="https://github.com/Niall1985" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a class="icon-btn" href="https://www.linkedin.com/in/niall-dcunha" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a class="icon-btn" href="mailto:venugopalcoldcoffee@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        <a class="icon-btn" href="https://x.com/NiallD1985" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-      </div>
-      <button class="icon-btn hamburger" aria-label="Open Menu" onclick="document.getElementById('drawer').showModal()"><i class="fa-solid fa-bars"></i></button>
-    </div>
-  </nav>
-
-  <!-- MOBILE DRAWER -->
-  <dialog id="drawer" style="border:none; background:rgba(11,13,16,.9); color:var(--text); width:100%; max-width:420px; margin:0 0 0 auto; height:100%; padding:0;">
-    <div style="padding:18px 18px 8px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(148,163,184,.15)">
-      <strong>Menu</strong>
-      <button class="icon-btn" onclick="this.closest('dialog').close()"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:14px; padding:16px">
-      <a href="#projects" onclick="drawer.close()">Projects</a>
-      <a href="#skills" onclick="drawer.close()">Skills</a>
-      <a href="#stack" onclick="drawer.close()">Agent Stack</a>
-      <a href="#impact" onclick="drawer.close()">Impact</a>
-      <a href="#contact" onclick="drawer.close()">Contact</a>
-      <div style="display:flex; gap:10px; margin-top:6px">
-        <a class="icon-btn" href="https://github.com/Niall1985" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a class="icon-btn" href="https://www.linkedin.com/in/niall-dcunha" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a class="icon-btn" href="mailto:venugopalcoldcoffee@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        <a class="icon-btn" href="https://x.com/NiallD1985" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- HERO -->
-  <header class="hero" id="top">
-    <span class="badge"><i class="fa-solid fa-bolt"></i> Shipping AI agents people actually use</span>
-    <div class="hero-grid">
-      <section class="card pad">
-        <h1 class="title">Niall D'cunha</h1>
-        <p class="subtitle">AI Agent Developer • Backend Engineer
-          <br/>I design, build, and ship reliable AI agents—from RAG assistants to autonomous workflows—grounded in solid backend engineering.
-        </p>
-        <div class="cta-row">
-          <a class="btn primary" href="#projects"><i class="fa-solid fa-rocket"></i> View Projects</a>
-          <a class="btn" href="#contact"><i class="fa-solid fa-paper-plane"></i> Contact</a>
-          <a class="btn" href="https://github.com/Niall1985" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-        </div>
-        <div class="metrics">
-          <div class="metric"><div class="v">15+</div><div class="k">Agents & Apps</div></div>
-          <div class="metric"><div class="v">60+</div><div class="k">Repos</div></div>
-          <div class="metric"><div class="v">100+</div><div class="k">Stars</div></div>
-          <div class="metric"><div class="v">&lt; 800ms</div><div class="k">p95 Latency</div></div>
-        </div>
-      </section>
-      <aside class="card pad">
-        <h3 style="margin:0 0 10px">What I solve</h3>
-        <ul style="margin:0; padding-left:18px; line-height:1.7; color:var(--muted)">
-          <li>Designing tool-using agents with predictable behavior</li>
-          <li>Production RAG: chunking, indexing, evals, and guardrails</li>
-          <li>Low-latency APIs with FastAPI/Go and Redis</li>
-          <li>Observability: tracing, cost + latency budgets</li>
-        </ul>
-        <div style="margin-top:14px" class="stack">
-          <div class="stack-item"><i class="fa-solid fa-diagram-project"></i><div><strong>Orchestration</strong><br/><small class="muted">LangGraph • tools • evaluators</small></div></div>
-          <div class="stack-item"><i class="fa-solid fa-brain"></i><div><strong>LLMs</strong><br/><small class="muted">OpenAI • Gemini • prompts</small></div></div>
-          <div class="stack-item"><i class="fa-solid fa-database"></i><div><strong>Memory</strong><br/><small class="muted">FAISS • Pinecone • RAG</small></div></div>
-          <div class="stack-item"><i class="fa-solid fa-screwdriver-wrench"></i><div><strong>Tools</strong><br/><small class="muted">Web • Code • Docs</small></div></div>
-        </div>
-      </aside>
+  <header>
+    <h1>Niall D'cunha</h1>
+    <p>AI Agent Developer • Backend Engineer</p>
+    <p class="pitch">I design, build, and ship reliable AI agents—from retrieval-augmented assistants to autonomous workflows—grounded in solid backend engineering.</p>
+    <div class="socials">
+      <a href="https://github.com/Niall1985">GitHub</a>
+      <a href="https://www.linkedin.com/in/niall-dcunha">LinkedIn</a>
+      <a href="mailto:venugopalcoldcoffee@gmail.com">Email</a>
+      <a href="https://x.com/NiallD1985">X/Twitter</a>
     </div>
   </header>
 
-  <!-- SKILLS -->
-  <section class="section" id="skills">
-    <h2>Skills</h2>
-    <p class="hint">A stack tuned for agentic systems, data-heavy backends, and fast iteration.</p>
-    <div class="skills">
-      <div class="skill"><h3>Languages</h3><div class="chip-row">
-        <span class="chip">Python</span><span class="chip">Go</span><span class="chip">C</span><span class="chip">C++</span><span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">SQL</span>
-      </div></div>
-      <div class="skill"><h3>Frameworks</h3><div class="chip-row">
-        <span class="chip">FastAPI</span><span class="chip">Flask</span><span class="chip">Express</span><span class="chip">Streamlit</span>
-      </div></div>
-      <div class="skill"><h3>AI / ML</h3><div class="chip-row">
-        <span class="chip">Transformers</span><span class="chip">LSTM</span><span class="chip">LangChain / LangGraph</span><span class="chip">RAG</span><span class="chip">FAISS</span><span class="chip">Pinecone</span>
-      </div></div>
-      <div class="skill"><h3>Dev & Ops</h3><div class="chip-row">
-        <span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">NGINX</span>
-      </div></div>
+  <section class="metrics">
+    <div class="metrics-grid">
+      <div class="card"><h3>Agents & Apps</h3><p>15+</p></div>
+      <div class="card"><h3>Repos</h3><p>60+</p></div>
+      <div class="card"><h3>Latency (p95)</h3><p>&lt; 800ms</p></div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="section" id="projects">
-    <h2>Highlighted Projects</h2>
-    <div class="toolbar">
-      <div class="search" role="search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input id="q" type="text" placeholder="Search by name or tag (e.g., RAG, Flask, Go)" oninput="filterProjects()"/>
-      </div>
-      <a class="pill" href="https://github.com/Niall1985" target="_blank"><i class="fa-brands fa-github"></i> All Repos</a>
-    </div>
-    <div id="projectGrid" class="grid">
-      <!-- Each project card -->
-      <article class="project" data-tags="python,assistant,voice,nlp">
-        <div class="tagbar"><span class="tag">Agent</span><span class="tag">Python</span></div>
-        <div class="body">
-          <h3>Lucy — Personal Voice Assistant</h3>
-          <p>Speech-driven Python assistant using STT/TTS + NLP with tool use.</p>
-          <div class="actions">
-            <a class="pill primary" href="https://github.com/Niall1985/CLI_virtual_assistant" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project" data-tags="rag,pdf,search,flask,embeddings">
-        <div class="tagbar"><span class="tag">RAG</span><span class="tag">Flask</span></div>
-        <div class="body">
-          <h3>DocuMentor — PDF Q&A</h3>
-          <p>Upload PDFs and query relevant sections using sentence transformers + vector search.</p>
-          <div class="actions">
-            <a class="pill primary" href="https://github.com/Niall1985/DocuMentor" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project" data-tags="go,backend,files,api">
-        <div class="tagbar"><span class="tag">Go</span><span class="tag">API</span></div>
-        <div class="body">
-          <h3>File Server (Go)</h3>
-          <p>Upload, list, download, and delete files. Clean HTTP handlers and secure storage.</p>
-          <div class="actions">
-            <a class="pill primary" href="https://github.com/Niall1985/FileServerGolang" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project" data-tags="bot,health,db,gemini,python">
-        <div class="tagbar"><span class="tag">Agent</span><span class="tag">Gemini</span></div>
-        <div class="body">
-          <h3>Disease Info Bot</h3>
-          <p>Retrieves structured disease data from DB and augments with LLM responses.</p>
-          <div class="actions">
-            <a class="pill primary" href="https://github.com/Niall1985/Disease_Info_Bot" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project" data-tags="nlp,lstm,ml,library,python">
-        <div class="tagbar"><span class="tag">ML</span><span class="tag">Library</span></div>
-        <div class="body">
-          <h3>SentiToolKit</h3>
-          <p>LSTM-based mini library for sentiment prediction with a clean API.</p>
-          <div class="actions">
-            <a class="pill primary" href="https://github.com/Niall1985/SentiToolKit" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project" data-tags="summarization,nlp,python,cli">
-        <div class="tagbar"><span class="tag">NLP</span><span class="tag">CLI</span></div>
-        <div class="body">
-          <h3>Text Summarizer</h3>
-          <p>Frequency-based extractive summarization in a compact Python script.</p>
-          <div class="actions">
-            <a class="pill primary" href="https://github.com/Niall1985/Text_summarizer" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project" data-tags="android,agriculture,flask,app,ai">
-        <div class="tagbar"><span class="tag">App</span><span class="tag">AI</span></div>
-        <div class="body">
-          <h3>AgroConnect</h3>
-          <p>Direct-to-consumer crop marketplace with AI-assisted flows.</p>
-          <div class="actions">
-            <a class="pill primary" href="https://github.com/celestix/agroconnect" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project" data-tags="shortener,flask,python,web">
-        <div class="tagbar"><span class="tag">Web</span><span class="tag">Flask</span></div>
-        <div class="body">
-          <h3>NanoLinks — URL Shortener</h3>
-          <p>Straightforward Flask app to shorten and redirect links.</p>
-          <div class="actions">
-            <a class="pill primary" href="https://github.com/Niall1985/NanoLinks" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project" data-tags="security,pdf,python,bruteforce">
-        <div class="tagbar"><span class="tag">Security</span><span class="tag">Python</span></div>
-        <div class="body">
-          <h3>PDF Password Decrypter</h3>
-          <p>Brute-force candidate generators for unlocking protected PDFs.</p>
-          <div class="actions">
-            <a class="pill primary" href="https://github.com/Niall1985/PasswordDecrypter" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project" data-tags="c,dsa,os,scheduling">
-        <div class="tagbar"><span class="tag">C</span><span class="tag">Algorithms</span></div>
-        <div class="body">
-          <h3>C Programming</h3>
-          <p>Exercises from DSA to process scheduling with clean, tested code.</p>
-          <div class="actions">
-            <a class="pill primary" href="https://github.com/Niall1985/C_Programming" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project" data-tags="rag,pdf,local,chatbot,python">
-        <div class="tagbar"><span class="tag">Local RAG</span><span class="tag">Python</span></div>
-        <div class="body">
-          <h3>ChatPDF-Local</h3>
-          <p>Run a local chatbot that chats with your PDFs using embeddings + retrieval.</p>
-          <div class="actions">
-            <a class="pill primary" href="https://github.com/Niall1985/ChatPDF-Local" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project" data-tags="streamlit,blog,gemini,ai">
-        <div class="tagbar"><span class="tag">Streamlit</span><span class="tag">AI</span></div>
-        <div class="body">
-          <h3>BlogStop</h3>
-          <p>Minimal blogging platform with Gemini-assisted content generation.</p>
-          <div class="actions">
-            <a class="pill primary" href="https://github.com/Niall1985/BlogStop" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> GitHub</a>
-          </div>
-        </div>
-      </article>
+  <section class="skills">
+    <h2 style="color:#58a6ff">Skills</h2>
+    <div class="skills-grid">
+      <div class="card"><h3>Languages</h3><p>Python, Go, C, C++, JavaScript, HTML, CSS, SQL</p></div>
+      <div class="card"><h3>Frameworks</h3><p>FastAPI, Flask, Express, Streamlit</p></div>
+      <div class="card"><h3>AI / ML</h3><p>LSTM, Transformers, LangChain/LangGraph, RAG, Vector Search (FAISS/Pinecone)</p></div>
     </div>
   </section>
 
-  <!-- AGENT STACK EXPLAINER -->
-  <section class="section" id="stack">
-    <h2>Agent Stack</h2>
-    <p class="hint">How I design reliable, tool-using agents with measurable outcomes.</p>
-    <div class="skills">
-      <div class="skill"><h3>Orchestration</h3><div class="chip-row">
-        <span class="chip">LangGraph</span><span class="chip">LangChain</span><span class="chip">Tool calling</span><span class="chip">State charts</span>
-      </div></div>
-      <div class="skill"><h3>LLMs</h3><div class="chip-row">
-        <span class="chip">OpenAI</span><span class="chip">Gemini</span><span class="chip">Prompt tooling</span><span class="chip">Function specs</span>
-      </div></div>
-      <div class="skill"><h3>Memory</h3><div class="chip-row">
-        <span class="chip">FAISS</span><span class="chip">Pinecone</span><span class="chip">Hybrid search</span><span class="chip">RAG evals</span>
-      </div></div>
-      <div class="skill"><h3>Infra & Observability</h3><div class="chip-row">
-        <span class="chip">Docker</span><span class="chip">Redis</span><span class="chip">PostgreSQL</span><span class="chip">Tracing</span><span class="chip">Cost/Latency budgets</span>
-      </div></div>
+  <section class="agent-stack">
+    <h2 style="color:#58a6ff">Agent Stack</h2>
+    <div class="agent-grid">
+      <div class="card"><h3>Orchestration</h3><p>LangGraph / LangChain, pydantic flows, tool calling</p></div>
+      <div class="card"><h3>LLMs</h3><p>OpenAI / Gemini, function calling, system prompt design</p></div>
+      <div class="card"><h3>Memory</h3><p>FAISS / Pinecone, RAG, hybrid search, embeddings pipelines</p></div>
+      <div class="card"><h3>Tools</h3><p>Web browsing, Code exec sandboxes, PDF/Doc parsers</p></div>
+      <div class="card"><h3>Observability</h3><p>Tracing, evals / unit tests, latency + cost budgets</p></div>
     </div>
   </section>
 
-  <!-- IMPACT / EXPERIENCE -->
-  <section class="section" id="impact">
-    <h2>Impact</h2>
-    <div class="timeline">
-      <div class="rail" aria-hidden="true"></div>
-      <div class="t-card">
-        <span class="dot" aria-hidden="true"></span>
-        <strong>Reduced RAG response latency to &lt;800ms p95</strong>
-        <p class="hint">Chunk tuning, hybrid vector/keyword search, async pipelines.</p>
+  <section class="projects">
+    <h2 style="color:#58a6ff">Highlighted Projects</h2>
+    <div class="projects-grid">
+      <div class="card">
+        <span class="badge">Agent</span><span class="badge">Python</span>
+        <h3>Lucy — Personal Voice Assistant</h3>
+        <p>Speech-driven Python assistant using STT/TTS + NLP with tool use.</p>
+        <a href="#">GitHub</a>
       </div>
-      <div></div>
-      <div class="t-card">
-        <span class="dot" aria-hidden="true"></span>
-        <strong>Hardened tool-calling agents</strong>
-        <p class="hint">Added schema validation, retries with backoff, and evaluation harnesses.</p>
+      <div class="card">
+        <span class="badge">RAG</span><span class="badge">Flask</span>
+        <h3>DocuMentor — PDF Q&A</h3>
+        <p>Upload PDFs and query relevant sections using sentence transformers + vector search.</p>
+        <a href="#">GitHub</a>
       </div>
-      <div></div>
-      <div class="t-card">
-        <span class="dot" aria-hidden="true"></span>
-        <strong>Productionized FastAPI services</strong>
-        <p class="hint">Containerized, added Redis caching, CI/CD with GitHub Actions.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <h2>Contact</h2>
-    <p class="hint">Open to internships, collaborations, and agent-focused backend roles.</p>
-    <div class="card pad" style="display:grid; gap:12px">
-      <form action="mailto:venugopalcoldcoffee@gmail.com" method="post" enctype="text/plain" style="display:grid; gap:10px">
-        <label>
-          <span class="sr">Your email</span>
-          <input style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(148,163,184,.2); background:var(--glass); color:var(--text)" type="email" name="Email" placeholder="you@domain.com" required>
-        </label>
-        <label>
-          <span class="sr">Message</span>
-          <textarea style="width:100%; min-height:120px; padding:12px 14px; border-radius:12px; border:1px solid rgba(148,163,184,.2); background:var(--glass); color:var(--text)" name="Message" placeholder="Tell me about your project…" required></textarea>
-        </label>
-        <button class="btn primary" type="submit"><i class="fa-solid fa-paper-plane"></i> Send</button>
-      </form>
-      <div style="display:flex; gap:10px; flex-wrap:wrap">
-        <a class="pill" href="https://github.com/Niall1985" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-        <a class="pill" href="https://www.linkedin.com/in/niall-dcunha" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-        <a class="pill" href="mailto:venugopalcoldcoffee@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-        <a class="pill" href="https://x.com/NiallD1985" target="_blank"><i class="fa-brands fa-x-twitter"></i> X / Twitter</a>
+      <div class="card">
+        <span class="badge">Go</span><span class="badge">API</span>
+        <h3>File Server (Go)</h3>
+        <p>Upload, list, download, and delete files. Clean HTTP handlers and secure storage.</p>
+        <a href="#">GitHub</a>
       </div>
     </div>
   </section>
-
-  <footer>
-    <p>© <span id="y"></span> Niall D'cunha. Built with plain HTML/CSS. No frameworks, just clean UI.</p>
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Search/Filter projects by data-tags or title
-    function filterProjects(){
-      const q = (document.getElementById('q').value || '').toLowerCase().trim();
-      const cards = document.querySelectorAll('#projectGrid .project');
-      cards.forEach(card => {
-        const tags = card.getAttribute('data-tags') || '';
-        const title = card.querySelector('h3').textContent.toLowerCase();
-        const match = !q || tags.includes(q) || title.includes(q);
-        card.style.display = match ? '' : 'none';
-      });
-    }
-  </script>
 </body>
 </html>
