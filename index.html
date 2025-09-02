@@ -402,155 +402,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Niall D'cunha — AI Agent Developer</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0d1117;
-      color: #e6edf3;
+    }
+    body {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #e2e8f0;
       line-height: 1.6;
     }
     header {
-      text-align: center;
       padding: 3rem 1rem;
+      text-align: center;
     }
     header h1 {
       font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      color: #58a6ff; /* light blue accent */
+      color: #38bdf8;
+      font-weight: bold;
     }
     header p {
       font-size: 1.2rem;
-      color: #8b949e;
+      color: #94a3b8;
+      margin-top: 0.5rem;
     }
-    .socials a {
-      margin: 0 0.5rem;
-      color: #58a6ff;
-      text-decoration: none;
-      font-weight: 500;
+    section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-    .metrics, .skills, .agent-stack, .projects {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #38bdf8;
     }
-    .metrics-grid, .skills-grid, .agent-grid, .projects-grid {
+    .card-grid {
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
-    }
-    .metrics-grid {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-    .skills-grid {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-    .agent-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .projects-grid {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
     .card {
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
       padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
     }
     .card h3 {
-      margin-top: 0;
-      color: #58a6ff;
+      color: #38bdf8;
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
     }
-    .badge {
-      display: inline-block;
-      background: rgba(88, 166, 255, 0.1);
-      color: #58a6ff;
-      padding: 0.2rem 0.6rem;
-      margin: 0.2rem;
-      border-radius: 8px;
-      font-size: 0.8rem;
+    .skills-list, .impact-list {
+      list-style: none;
+      padding-left: 0;
     }
-    .projects-grid .card p {
-      color: #c9d1d9;
+    .skills-list li, .impact-list li {
+      margin-bottom: 0.5rem;
+      color: #cbd5e1;
     }
-    .projects-grid .card a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      background: #58a6ff;
-      color: #0d1117;
-      padding: 0.4rem 0.8rem;
-      border-radius: 8px;
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #64748b;
       font-size: 0.9rem;
-      text-decoration: none;
-      font-weight: 600;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Niall D'cunha</h1>
-    <p>AI Agent Developer • Backend Engineer</p>
-    <p class="pitch">I design, build, and ship reliable AI agents—from retrieval-augmented assistants to autonomous workflows—grounded in solid backend engineering.</p>
-    <div class="socials">
-      <a href="https://github.com/Niall1985">GitHub</a>
-      <a href="https://www.linkedin.com/in/niall-dcunha">LinkedIn</a>
-      <a href="mailto:venugopalcoldcoffee@gmail.com">Email</a>
-      <a href="https://x.com/NiallD1985">X/Twitter</a>
-    </div>
+    <p>AI Agent Developer | Maritime Logistics Innovator</p>
   </header>
 
-  <section class="metrics">
-    <div class="metrics-grid">
-      <div class="card"><h3>Agents & Apps</h3><p>15+</p></div>
-      <div class="card"><h3>Repos</h3><p>60+</p></div>
-      <div class="card"><h3>Latency (p95)</h3><p>&lt; 800ms</p></div>
+  <section>
+    <h2>About Me</h2>
+    <div class="card">
+      <p>I design and build <span style="color:#38bdf8;">AI-powered agent workflows</span> with a focus on maritime logistics and intelligent automation. My work combines technical expertise with real-world applications to deliver solutions that scale.</p>
     </div>
   </section>
 
-  <section class="skills">
-    <h2 style="color:#58a6ff">Skills</h2>
-    <div class="skills-grid">
-      <div class="card"><h3>Languages</h3><p>Python, Go, C, C++, JavaScript, HTML, CSS, SQL</p></div>
-      <div class="card"><h3>Frameworks</h3><p>FastAPI, Flask, Express, Streamlit</p></div>
-      <div class="card"><h3>AI / ML</h3><p>LSTM, Transformers, LangChain/LangGraph, RAG, Vector Search (FAISS/Pinecone)</p></div>
+  <section>
+    <h2>Core Skills</h2>
+    <div class="card">
+      <ul class="skills-list">
+        <li>AI Agent Workflow Design</li>
+        <li>Python Backend Development</li>
+        <li>Generative AI Applications</li>
+        <li>Maritime Logistics Optimization</li>
+      </ul>
     </div>
   </section>
 
-  <section class="agent-stack">
-    <h2 style="color:#58a6ff">Agent Stack</h2>
-    <div class="agent-grid">
-      <div class="card"><h3>Orchestration</h3><p>LangGraph / LangChain, pydantic flows, tool calling</p></div>
-      <div class="card"><h3>LLMs</h3><p>OpenAI / Gemini, function calling, system prompt design</p></div>
-      <div class="card"><h3>Memory</h3><p>FAISS / Pinecone, RAG, hybrid search, embeddings pipelines</p></div>
-      <div class="card"><h3>Tools</h3><p>Web browsing, Code exec sandboxes, PDF/Doc parsers</p></div>
-      <div class="card"><h3>Observability</h3><p>Tracing, evals / unit tests, latency + cost budgets</p></div>
+  <section>
+    <h2>Projects</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Port Refueling Optimizer</h3>
+        <p>Optimized fuel redistribution across storage and service tanks using batch-aware AI logic, reducing manual effort by 70%.</p>
+      </div>
+      <div class="card">
+        <h3>Brent & WTI Price Forecaster</h3>
+        <p>LSTM-based forecasting model integrating global oil price patterns with port-side operational data for accurate predictions.</p>
+      </div>
+      <div class="card">
+        <h3>Autonomous Rover Docking</h3>
+        <p>Developed intelligent docking and charging workflow for medical mobility rovers in hospital environments.</p>
+      </div>
     </div>
   </section>
 
-  <section class="projects">
-    <h2 style="color:#58a6ff">Highlighted Projects</h2>
-    <div class="projects-grid">
-      <div class="card">
-        <span class="badge">Agent</span><span class="badge">Python</span>
-        <h3>Lucy — Personal Voice Assistant</h3>
-        <p>Speech-driven Python assistant using STT/TTS + NLP with tool use.</p>
-        <a href="#">GitHub</a>
-      </div>
-      <div class="card">
-        <span class="badge">RAG</span><span class="badge">Flask</span>
-        <h3>DocuMentor — PDF Q&A</h3>
-        <p>Upload PDFs and query relevant sections using sentence transformers + vector search.</p>
-        <a href="#">GitHub</a>
-      </div>
-      <div class="card">
-        <span class="badge">Go</span><span class="badge">API</span>
-        <h3>File Server (Go)</h3>
-        <p>Upload, list, download, and delete files. Clean HTTP handlers and secure storage.</p>
-        <a href="#">GitHub</a>
-      </div>
+  <section>
+    <h2>Impact</h2>
+    <div class="card">
+      <ul class="impact-list">
+        <li><span style="color:#38bdf8;">Reduced fuel wastage</span> in bunker operations by 15%.</li>
+        <li>Enabled predictive logistics in maritime fleets with AI forecasting tools.</li>
+        <li>Contributed to safer and more reliable autonomous mobility in healthcare settings.</li>
+      </ul>
     </div>
   </section>
+
+  <footer>
+    <p>© 2025 Niall D'cunha. All rights reserved.</p>
+  </footer>
 </body>
 </html>
