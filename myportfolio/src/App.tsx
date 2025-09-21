@@ -81,7 +81,7 @@ const App = () => {
     {
       title: 'BlogStop',
       description: ' BlogStop is a minimal and user-friendly blogging platform built with Streamlit and Google Gemini AI.',
-      technologies: ['Python', 'Streamlit', 'Google=GenerativeAI'],
+      technologies: ['Python', 'Streamlit', 'Google-GenerativeAI'],
       githubUrl: 'https://github.com/Niall1985/BlogStop'
     },
     {
