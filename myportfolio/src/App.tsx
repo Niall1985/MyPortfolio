@@ -109,7 +109,7 @@ const App = () => {
       githubUrl: 'https://github.com/Niall1985/DocuMentor'
     },
     {
-      title: 'NanoLinls',
+      title: 'NanoLinks',
       description: 'A url shortener built using python.',
       technologies: ['Python'],
       githubUrl: 'https://github.com/Niall1985/nanolinks'
