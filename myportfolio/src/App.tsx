@@ -129,7 +129,7 @@ const App = () => {
     {
       title: 'MTRagEval',
       description: 'This project implements a multi-turn RAG evaluation workflow, combining retrieval and generation modules to assess how effectively a language model can generate factual, context-grounded answers.',
-      technologies: ['Python'],
+      technologies: ['Python', 'Google-GenerativeAI', 'sentence-transformers', 'nltk', 'spacy'],
       githubUrl: 'https://github.com/Niall1985/MTRagEval'
     }
     
