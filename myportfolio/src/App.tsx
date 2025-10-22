@@ -125,6 +125,12 @@ const App = () => {
       description: 'A PDF File password decryptor written in Python using the pyPDF2 library and the itertools library.',
       technologies: ['Python'],
       githubUrl: 'https://github.com/Niall1985/PasswordDecrypter'
+    },
+    {
+      title: 'MTRagEval',
+      description: 'This project implements a multi-turn RAG evaluation workflow, combining retrieval and generation modules to assess how effectively a language model can generate factual, context-grounded answers.',
+      technologies: ['Python'],
+      githubUrl: 'https://github.com/Niall1985/MTRagEval'
     }
     
   ];
